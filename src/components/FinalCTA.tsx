@@ -1,5 +1,7 @@
 'use client'
 
+import EmailSignupForm from '@/components/EmailSignupForm'
+
 export default function FinalCTA() {
   return (
     <section
@@ -30,19 +32,7 @@ export default function FinalCTA() {
           <p className="text-sm text-white/50 mb-6 leading-[1.6]">
             Early subscribers get priority access to our programmes and updates.
           </p>
-          <form onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="w-full px-[18px] py-3.5 rounded-[10px] border border-white/15 bg-white/[0.08] text-white text-sm placeholder-white/30 outline-none transition-colors focus:border-white/35 mb-3 font-sans"
-            />
-            <button
-              type="submit"
-              className="w-full py-3.5 rounded-[10px] bg-orange text-white text-[15px] font-medium transition-colors hover:bg-[#e07d40] font-sans"
-            >
-              Sign Me Up
-            </button>
-          </form>
+          <EmailSignupForm variant="dark" buttonLabel="Sign Me Up" />
         </div>
 
       </div>

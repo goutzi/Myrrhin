@@ -1,5 +1,7 @@
 'use client'
 
+import EmailSignupForm from '@/components/EmailSignupForm'
+
 export default function About() {
   return (
     <section id="about" className="bg-light py-[120px] px-[72px] max-md:py-20 max-md:px-6">
@@ -58,21 +60,7 @@ export default function About() {
               We&apos;re launching soon. Drop your email and we&apos;ll keep you updated
               on our progress, early access opportunities, and launch news.
             </p>
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="mb-3">
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-full px-[18px] py-3.5 rounded-xl border-[1.5px] border-navy/15 bg-light text-sm text-navy placeholder-[#9aaac4] outline-none transition-colors focus:border-ocean focus:bg-white font-sans"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3.5 rounded-xl bg-navy text-white text-[15px] font-medium transition-colors hover:bg-baltic font-sans"
-              >
-                Get Early Access
-              </button>
-            </form>
+            <EmailSignupForm variant="light" buttonLabel="Get Early Access" />
             <p className="text-center text-xs text-[#aabbd0] mt-3.5">
               No spam. Unsubscribe anytime.
             </p>
