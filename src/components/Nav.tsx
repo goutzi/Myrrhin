@@ -1,23 +1,19 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { imgPath } from '@/lib/imgPath'
 
 export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[72px] h-[72px] bg-white/90 backdrop-blur-md border-b border-navy/[0.08] max-md:px-6">
       <div className="flex items-center gap-2.5">
-        <Image
-          src="/img/Wooshy_Only.svg"
+        <img
+          src={imgPath('/img/Wooshy_Only.svg')}
           alt=""
           aria-hidden
-          width={32}
-          height={32}
           className="h-8 w-auto"
         />
-        <Image
-          src="/img/Myrrhin_Text_Only.svg"
+        <img
+          src={imgPath('/img/Myrrhin_Text_Only.svg')}
           alt="Myrrihn"
-          width={90}
-          height={17}
           className="h-[17px] w-auto"
         />
       </div>

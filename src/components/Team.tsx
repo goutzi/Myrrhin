@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { imgPath } from '@/lib/imgPath'
 
 const founders = [
   {
@@ -43,11 +43,9 @@ export default function Team() {
             className="flex gap-7 p-9 rounded-[20px] border border-navy/[0.08] items-start transition-all duration-[250ms] hover:border-navy/[0.16] hover:shadow-[0_8px_40px_rgba(1,45,98,0.08)]"
           >
             <div className="flex-shrink-0 w-[110px] h-[130px] rounded-[14px] overflow-hidden">
-              <Image
-                src={person.photo}
+              <img
+                src={imgPath(person.photo)}
                 alt={person.name}
-                width={110}
-                height={130}
                 className="w-full h-full object-cover object-top"
               />
             </div>

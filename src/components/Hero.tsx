@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { imgPath } from '@/lib/imgPath'
 
 export default function Hero() {
   return (
@@ -30,7 +30,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#stay-updated"
-            className="inline-flex items-center gap-2 text-[15px] text-navy font-medium transition-all hover:gap-3.5 group"
+            className="inline-flex items-center gap-2 text-[15px] text-navy font-medium transition-all hover:gap-3.5"
           >
             Join the waitlist
             <span className="text-orange">→</span>
@@ -41,19 +41,15 @@ export default function Hero() {
       <div className="flex-[0_0_420px] flex items-center justify-center max-md:hidden">
         <div className="w-[380px] h-[380px] rounded-full bg-gradient-to-br from-navy to-ocean flex items-center justify-center overflow-hidden">
           <div className="flex flex-col items-center gap-[18px] relative z-10">
-            <Image
-              src="/img/Wooshy_Only.svg"
+            <img
+              src={imgPath('/img/Wooshy_Only.svg')}
               alt=""
               aria-hidden
-              width={200}
-              height={200}
               className="w-[55%] brightness-0 invert opacity-90"
             />
-            <Image
-              src="/img/Myrrhin_Text_Only.svg"
+            <img
+              src={imgPath('/img/Myrrhin_Text_Only.svg')}
               alt="Myrrihn"
-              width={200}
-              height={40}
               className="w-[58%] brightness-0 invert"
             />
           </div>
