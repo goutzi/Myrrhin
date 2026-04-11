@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myrrihn — Maritime Shipping Education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #012d62;
+      --orange:  #f79256;
+      --baltic:  #0558a2;
+      --ocean:   #1168ad;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 64px;
+      height: 68px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    nav .logo img { height: 22px; }
+
+    nav .nav-center {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    nav .nav-center a {
+      color: rgba(1,45,98,0.55);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    nav .nav-center a:hover { color: var(--navy); }
+
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pill-btn {
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-outline {
+      border: 1.5px solid rgba(1,45,98,0.25);
+      color: var(--navy);
+      background: transparent;
+    }
+
+    .pill-outline:hover { border-color: var(--navy); }
+
+    .pill-filled {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+    }
+
+    .pill-filled:hover { background: #e07d40; }
+
+    /* ── HERO — FULL BLEED SPLIT ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .hero-left {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--ocean);
+      opacity: 0.25;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px 6px 6px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.75);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      width: fit-content;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .hero-left h1 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: clamp(2.8rem, 4.5vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .hero-left p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left-actions {
+      display: flex;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-right {
+      background: #f0f3f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right-wooshy {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .hero-right-wooshy img {
+      width: 120%;
+      margin-left: -10%;
+      opacity: 0.12;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 48px 44px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 60px rgba(1,45,98,0.12);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card img.logo-sm {
+      height: 20px;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .hero-card h2 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: #6a7a9a;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .hero-card input[type="email"] {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(1,45,98,0.12);
+      background: #f7f9fc;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--navy);
+      outline: none;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+
+    .hero-card input[type="email"]:focus {
+      border-color: var(--ocean);
+      background: var(--white);
+    }
+
+    .hero-card input::placeholder { color: #a0b0c8; }
+
+    .hero-card button {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      border: none;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .hero-card button:hover { background: var(--baltic); }
+
+    .hero-card-note {
+      text-align: center;
+      font-size: 11px;
+      color: #afc0d5;
+      margin-top: 12px;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 140px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .about-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .section-num {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: 5rem;
+      font-weight: 300;
+      color: rgba(1,45,98,0.06);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .about-sidebar h2 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .about-body p {
+      font-size: 17px;
+      color: #4a5a7a;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .about-body p:last-of-type { margin-bottom: 0; }
+
+    .quote-block {
+      margin: 44px 0;
+      padding: 32px 36px;
+      border-left: 3px solid var(--orange);
+      background: #f7f9fc;
+      border-radius: 0 16px 16px 0;
+    }
+
+    .quote-block p {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── TEAM ── */
+    .team-section {
+      background: var(--navy);
+      padding: 140px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-wooshy {
+      position: absolute;
+      right: -5%;
+      bottom: -10%;
+      width: 60%;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .team-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 80px;
+    }
+
+    .team-top-left .section-label { color: rgba(247,146,86,0.8); }
+
+    .team-top-left h2 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .team-top-right {
+      max-width: 300px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    .team-profiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .profile {
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .profile:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .profile-img-wrap {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+
+    .profile:hover .profile-img-wrap img { transform: scale(1.04); }
+
+    .profile-body {
+      padding: 32px 36px 36px;
+    }
+
+    .profile-role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .profile-name {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .profile-bio {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-section {
+      padding: 160px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(17,104,173,0.06) 0%, transparent 70%);
+    }
+
+    .final-inner {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .final-section .section-label { margin-bottom: 20px; display: block; }
+
+    .final-inner h2 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .final-inner h2 em {
+      font-style: italic;
+      color: var(--ocean);
+    }
+
+    .final-inner > p {
+      font-size: 18px;
+      color: #5a6a8a;
+      line-height: 1.7;
+      margin-bottom: 56px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-form {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(1,45,98,0.1);
+      border: 1.5px solid rgba(1,45,98,0.1);
+    }
+
+    .final-form input[type="email"] {
+      flex: 1;
+      padding: 17px 22px;
+      border: none;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--navy);
+      background: var(--white);
+      outline: none;
+    }
+
+    .final-form input::placeholder { color: #aabcd0; }
+
+    .final-form button {
+      padding: 17px 28px;
+      border: none;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .final-form button:hover { background: #e07d40; }
+
+    .final-footnote {
+      font-size: 13px;
+      color: #a0b4cc;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 32px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer img { height: 20px; filter: brightness(0) invert(1); opacity: 0.55; }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      nav .nav-center { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 100px 32px 80px; }
+      .about-section { padding: 80px 32px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-sidebar { position: static; }
+      .team-section { padding: 80px 32px; }
+      .team-top { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .team-profiles { grid-template-columns: 1fr; }
+      .final-section { padding: 100px 32px; }
+      footer { padding: 28px 32px; flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <img src="img/Myrrhin_Text_Only.svg" alt="Myrrihn" />
+    </div>
+    <ul class="nav-center">
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#stay-updated">Stay Updated</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#stay-updated" class="pill-btn pill-filled">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- HERO — FULL-BLEED SPLIT -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        Maritime Education Initiative
+      </div>
+      <h1>Education for those who move <em>the world.</em></h1>
+      <p>
+        Myrrihn is a new kind of maritime learning platform — built from the inside
+        by people who know what the industry truly demands.
+      </p>
+      <div class="hero-left-actions">
+        <a href="#about" class="pill-btn" style="background:rgba(255,255,255,0.1); color:var(--white); border:1.5px solid rgba(255,255,255,0.2);">
+          Learn More
+        </a>
+        <a href="#team" class="pill-btn" style="background:transparent; color:rgba(255,255,255,0.6); border:none; padding-left:0; text-decoration:none;">
+          Meet the Team →
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-wooshy">
+        <img src="img/Wooshy_Only.svg" alt="" aria-hidden="true" />
+      </div>
+      <div class="hero-card">
+        <img class="logo-sm" src="img/Myrrhin_Text_Only.svg" alt="Myrrihn" />
+        <h2>Be the first to know.</h2>
+        <p>
+          We're building our programmes now. Sign up for early updates,
+          launch news, and exclusive access.
+        </p>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="your@email.com" />
+          <button type="submit">Get Early Access</button>
+        </form>
+        <p class="hero-card-note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-grid">
+      <div class="about-sidebar">
+        <div class="section-num">01</div>
+        <p class="section-label">About Myrrihn</p>
+        <h2>Where does the industry go next?</h2>
+      </div>
+      <div class="about-body">
+        <p>
+          The maritime industry is the backbone of global trade — 90% of everything
+          the world uses travels by sea. Yet the education sector serving it has
+          struggled to keep pace with the complexity, scale, and ambition that
+          modern shipping demands.
+        </p>
+        <div class="quote-block">
+          <p>
+            "We built Myrrihn because we lived the gap between what the industry
+            teaches and what it actually needs. That gap ends here."
+          </p>
+        </div>
+        <p>
+          Myrrihn is our answer. An education initiative designed with practitioners,
+          for practitioners. From commercial shipping operations to cargo risk and
+          port logistics, everything we build is grounded in real experience and
+          tested against the demands of the real world.
+        </p>
+        <p>
+          We're in the early stages, and we're building deliberately. If you believe
+          maritime education should be better, we'd love to have you with us.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="team-section">
+    <img class="team-wooshy" src="img/Wooshy_Only.svg" alt="" aria-hidden="true" />
+    <div class="team-inner">
+      <div class="team-top">
+        <div class="team-top-left">
+          <p class="section-label">The Founders</p>
+          <h2>The people who built it,<br>and the ones who'll see it through.</h2>
+        </div>
+        <p class="team-top-right">
+          Two professionals united by a conviction that the maritime world
+          deserves far better than what it's been given.
+        </p>
+      </div>
+      <div class="team-profiles">
+        <div class="profile">
+          <div class="profile-img-wrap">
+            <img src="img/Dimopoulos_Portrait.jpg" alt="Argyris Dimopoulos" />
+          </div>
+          <div class="profile-body">
+            <p class="profile-role">Founder</p>
+            <h3 class="profile-name">Argyris Dimopoulos</h3>
+            <p class="profile-bio">
+              A career maritime professional with extensive experience in commercial
+              shipping, cargo operations, and industry training. Argyris founded
+              Myrrihn to turn decades of operational insight into something that
+              endures: rigorous, accessible education for the people who make
+              global trade move.
+            </p>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="profile-img-wrap">
+            <img src="img/Gkoutziamanis_Portrait.jpg" alt="Niko Gkoutziamanis" />
+          </div>
+          <div class="profile-body">
+            <p class="profile-role">Co-Founder</p>
+            <h3 class="profile-name">Niko Gkoutziamanis</h3>
+            <p class="profile-bio">
+              Bringing a commercial and strategic perspective to Myrrihn, Niko is
+              focused on building the partnerships, structure, and reach that will
+              allow the initiative to serve maritime professionals across every
+              corner of the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="stay-updated" class="final-section">
+    <div class="final-inner">
+      <span class="section-label">Stay Updated</span>
+      <h2>Good things take <em>time to build.</em></h2>
+      <p>
+        We're not rushing. We're building something that lasts. Leave your email
+        below and we'll keep you in the loop — launch updates, early access
+        opportunities, and the occasional thought on maritime education.
+      </p>
+      <form class="final-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="submit">Notify Me</button>
+      </form>
+      <p class="final-footnote">No spam, ever. You can unsubscribe at any time.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="img/Myrrhin_Text_Only.svg" alt="Myrrihn" />
+    <p>&copy; 2026 Myrrihn. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
