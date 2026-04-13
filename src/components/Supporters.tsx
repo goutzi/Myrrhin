@@ -5,6 +5,10 @@ const supporters = [
     name: 'BIMCO',
     logo: '/img/BIMCO2016_Logo_RGB.svg',
   },
+  {
+    name: 'University of Athens',
+    logo: '/img/uni_athens_logo.jpg',
+  },
 ]
 
 export default function Supporters() {
