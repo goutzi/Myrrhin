@@ -57,7 +57,7 @@ export default function UpcomingEvents() {
                   <p className="text-sm font-medium text-navy leading-snug mb-1 truncate">
                     {event.title}
                   </p>
-                  <div className="flex items-center gap-2 text-xs text-[#6a7a9a]">
+                  <div className="flex items-center gap-2 text-xs text-[#6a7a9a] mb-2">
                     <span
                       className={`inline-block w-1.5 h-1.5 rounded-full ${
                         event.format === 'in-person'
@@ -69,6 +69,14 @@ export default function UpcomingEvents() {
                     <span className="text-navy/20">|</span>
                     <span>{event.location}</span>
                   </div>
+                  <a
+                    href={event.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-[12px] font-medium tracking-[0.03em] text-ocean hover:text-baltic transition-colors"
+                  >
+                    Register →
+                  </a>
                 </div>
               </div>
             )

@@ -61,9 +61,18 @@ function EventCard({ event, isPast }: { event: MyrEvent; isPast?: boolean }) {
           <span>{event.location}</span>
         </div>
 
-        <p className="text-sm text-[#5a6a8a] leading-[1.7]">
+        <p className="text-sm text-[#5a6a8a] leading-[1.7] mb-4">
           {event.description}
         </p>
+
+        <a
+          href={event.registrationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-5 py-2.5 rounded-full bg-navy text-white text-[13px] font-medium tracking-[0.03em] transition-colors hover:bg-baltic min-h-[44px] leading-[44px] py-0"
+        >
+          Register
+        </a>
       </div>
     </div>
   )
