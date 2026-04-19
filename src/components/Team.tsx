@@ -5,13 +5,13 @@ const founders = [
     role: 'Founder',
     name: 'Argyris Dimopoulos',
     photo: '/img/Dimopoulos_Portrait.jpg',
-    bio: 'A career maritime professional with deep roots in commercial shipping operations and industry training. Argyris founded Myrrihn to translate years of operational knowledge into structured, accessible education for the next generation of maritime professionals.',
+    bio: 'A career maritime professional with deep roots in commercial shipping operations and industry training. Argyris founded Myrrhin to translate years of operational knowledge into structured, accessible education for the next generation of maritime professionals.',
   },
   {
     role: 'Co-Founder',
     name: 'Niko Gkoutziamanis',
     photo: '/img/Gkoutziamanis_Portrait.jpg',
-    bio: 'With a background spanning maritime business and commercial strategy, Niko co-founded Myrrihn to help build the infrastructure, partnerships, and vision needed to bring world-class shipping education to professionals everywhere.',
+    bio: 'With a background spanning maritime business and commercial strategy, Niko co-founded Myrrhin to help build the infrastructure, partnerships, and vision needed to bring world-class shipping education to professionals everywhere.',
   },
 ]
 

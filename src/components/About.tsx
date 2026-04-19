@@ -1,6 +1,4 @@
-'use client'
-
-import EmailSignupForm from '@/components/EmailSignupForm'
+import UpcomingEvents from '@/components/UpcomingEvents'
 
 export default function About() {
   return (
@@ -10,13 +8,13 @@ export default function About() {
         {/* Left — mission copy */}
         <div>
           <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-orange mb-5">
-            About Myrrihn
+            About Myrrhin
           </p>
           <h2 className="font-serif font-light text-navy leading-[1.2] mb-7 text-[clamp(1.8rem,3.5vw,2.8rem)]">
             Built by people who know the industry from the inside out.
           </h2>
           <p className="text-base text-[#4a5a7a] leading-[1.8] mb-[18px]">
-            Myrrihn exists because the maritime world deserves education that
+            Myrrhin exists because the maritime world deserves education that
             matches the complexity and global scale of modern shipping. We&apos;re
             building programmes grounded in real operational experience — not
             textbook theory.
@@ -52,19 +50,7 @@ export default function About() {
 
         {/* Right — signup card */}
         <div className="sticky top-[100px] max-md:static">
-          <div className="bg-white rounded-[20px] p-[44px_40px] shadow-[0_2px_40px_rgba(1,45,98,0.08),0_0_0_1px_rgba(1,45,98,0.06)]">
-            <h3 className="font-serif font-normal text-navy text-2xl mb-2.5">
-              Stay in the loop.
-            </h3>
-            <p className="text-sm text-[#6a7a9a] leading-[1.65] mb-7">
-              We&apos;re launching soon. Drop your email and we&apos;ll keep you updated
-              on our progress, early access opportunities, and launch news.
-            </p>
-            <EmailSignupForm variant="light" buttonLabel="Get Early Access" />
-            <p className="text-center text-xs text-[#aabbd0] mt-3.5">
-              No spam. Unsubscribe anytime.
-            </p>
-          </div>
+          <UpcomingEvents />
         </div>
 
       </div>

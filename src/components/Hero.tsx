@@ -16,7 +16,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-[18px] text-[#4a5a7a] leading-[1.7] max-w-[520px] mb-[52px]">
-          Myrrihn is a maritime shipping education initiative bringing
+          Myrrhin is a maritime shipping education initiative bringing
           industry-grade knowledge to professionals and students across the
           globe.
         </p>
@@ -49,7 +49,7 @@ export default function Hero() {
             />
             <img
               src={imgPath('/img/Myrrhin_Text_Only.svg')}
-              alt="Myrrihn"
+              alt="Myrrhin"
               className="w-[58%] brightness-0 invert"
             />
           </div>

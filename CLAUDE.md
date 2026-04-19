@@ -1,8 +1,8 @@
-# Myrrihn — Claude Context
+# Myrrhin — Claude Context
 
-## What is Myrrihn?
+## What is Myrrhin?
 
-Myrrihn is a maritime shipping education startup. It's a pre-launch initiative building industry-grade educational programmes for maritime professionals and students worldwide. The landing page is the primary public-facing artefact at this stage.
+Myrrhin is a maritime shipping education startup. It's a pre-launch initiative building industry-grade educational programmes for maritime professionals and students worldwide. The landing page is the primary public-facing artefact at this stage.
 
 ## Founders
 
@@ -83,6 +83,16 @@ npm run dev     # local dev server at http://localhost:3000
 npm run build   # production build (static export to ./out)
 npm run lint    # ESLint
 ```
+
+## Mobile Optimization
+
+All UI must be tested and optimized for mobile users on both Android and iOS Safari. Key requirements:
+
+- Touch targets must be at least 44×44px for interactive elements
+- Layouts must stack gracefully at the `max-md:` breakpoint (768px)
+- Test on real devices or emulators for both Android Chrome and iOS Safari
+- Avoid CSS features with inconsistent mobile support (e.g. `backdrop-filter` needs `-webkit-` prefix for Safari)
+- Ensure smooth scrolling and scroll-linked behaviour works on iOS Safari
 
 ## Important Notes
 

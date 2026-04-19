@@ -11,9 +11,9 @@ const notoSerif = Noto_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'Myrrihn — Maritime Shipping Education',
+  title: 'Myrrhin — Maritime Shipping Education',
   description:
-    'Myrrihn is a maritime shipping education initiative bringing industry-grade knowledge to professionals and students across the globe.',
+    'Myrrhin is a maritime shipping education initiative bringing industry-grade knowledge to professionals and students across the globe.',
 }
 
 export default function RootLayout({

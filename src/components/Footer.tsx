@@ -12,12 +12,12 @@ export default function Footer() {
         />
         <img
           src={imgPath('/img/Myrrhin_Text_Only.svg')}
-          alt="Myrrihn"
+          alt="Myrrhin"
           className="h-[14px] w-auto brightness-0 invert opacity-50"
         />
       </div>
       <p className="text-[13px] text-white/30">
-        &copy; 2026 Myrrihn. All rights reserved.
+        &copy; 2026 Myrrhin. All rights reserved.
       </p>
     </footer>
   )
