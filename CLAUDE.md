@@ -37,7 +37,9 @@ src/
                         #   Both variants show: About | Team | Events links
     Hero.tsx            # Full-height hero
     About.tsx           # Mission copy + UpcomingEvents card (right column, sticky)
-    Team.tsx            # Founder cards
+    Team.tsx            # Founder cards — photo, bio, LinkedIn + email buttons
+                        #   Mobile: card stacks, photo/role/name centered, bio full-width,
+                        #   email button shows "Email" label (full address on desktop)
     Supporters.tsx      # BIMCO + University of Athens logos
     FinalCTA.tsx        # Dark navy CTA with EmailSignupForm (dark variant)
     Footer.tsx          # Minimal footer
