@@ -12,7 +12,7 @@ export interface MyrEvent {
 export const events: MyrEvent[] = [
   {
     id: 'intro-maritime-apr-2026',
-    title: 'Sea your Future | An introduction to careers in Maritime Shipping',
+    title: 'Sea your Future | An introduction to careers in Maritime',
     date: '2026-04-25',
     time: '18:00 EEST',
     location: 'REX Auditorium, Chora Messinia',
