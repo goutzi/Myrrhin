@@ -40,63 +40,51 @@ export default function Team() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-7 max-md:grid-cols-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         {founders.map((person) => (
           <div
             key={person.name}
-            className="flex gap-7 p-9 rounded-[20px] border border-navy/[0.08] items-start transition-all duration-[250ms] hover:border-navy/[0.16] hover:shadow-[0_8px_40px_rgba(1,45,98,0.08)] max-md:flex-col max-md:items-stretch max-md:gap-5 max-md:p-6"
+            className="grid grid-cols-1 gap-4 p-6 md:p-9 md:grid-cols-[auto_1fr] md:items-start md:gap-7 rounded-[20px] border border-navy/[0.08] transition-all duration-[250ms] hover:border-navy/[0.16] hover:shadow-[0_8px_40px_rgba(1,45,98,0.08)]"
           >
-            <div className="flex flex-col items-center gap-3 max-md:gap-2.5">
-              <div className="flex-shrink-0 w-[110px] h-[130px] rounded-[14px] overflow-hidden max-md:w-[130px] max-md:h-[150px]">
-                <img
-                  src={imgPath(person.photo)}
-                  alt={person.name}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <div className="hidden max-md:block text-center">
-                <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-orange mb-1.5">
-                  {person.role}
-                </p>
-                <h3 className="font-serif font-normal text-navy text-xl">
-                  {person.name}
-                </h3>
-              </div>
+            <div className="w-[130px] h-[150px] mx-auto md:mx-0 md:w-[110px] md:h-[130px] rounded-[14px] overflow-hidden">
+              <img
+                src={imgPath(person.photo)}
+                alt={person.name}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
-            <div className="flex-1 min-w-0 max-md:w-full">
-              <div className="max-md:hidden">
-                <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-orange mb-1.5">
-                  {person.role}
-                </p>
-                <h3 className="font-serif font-normal text-navy text-xl mb-3">
-                  {person.name}
-                </h3>
-              </div>
+            <div className="min-w-0 w-full">
+              <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-orange mb-1.5 text-center md:text-left">
+                {person.role}
+              </p>
+              <h3 className="font-serif font-normal text-navy text-xl mb-3 text-center md:text-left">
+                {person.name}
+              </h3>
               <p className="text-sm text-[#5a6a8a] leading-[1.7] mb-4 break-words">
                 {person.bio}
               </p>
-              <div className="flex items-center gap-2.5 flex-wrap max-md:justify-center">
+              <div className="flex items-center gap-2.5 flex-wrap justify-center md:justify-start">
                 <a
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-navy/[0.12] text-[12px] font-medium text-navy hover:bg-navy hover:text-white transition-all duration-200"
                 >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                   LinkedIn
                 </a>
                 <a
                   href={`mailto:${person.email}`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-navy/[0.12] text-[12px] font-medium text-navy hover:bg-navy hover:text-white transition-all duration-200 max-w-full"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-navy/[0.12] text-[12px] font-medium text-navy hover:bg-navy hover:text-white transition-all duration-200 max-w-full min-w-0"
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="flex-shrink-0">
                     <rect width="20" height="16" x="2" y="4" rx="2"/>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                   </svg>
-                  <span className="truncate max-md:hidden">{person.email}</span>
-                  <span className="hidden max-md:inline">Email</span>
+                  <span className="hidden md:inline truncate">{person.email}</span>
+                  <span className="md:hidden">Email</span>
                 </a>
               </div>
             </div>
