@@ -2,12 +2,12 @@
 
 ## What is Myrrhin?
 
-Myrrhin is a maritime shipping education startup. Pre-launch, building industry-grade educational programmes for maritime professionals and students worldwide. The landing page is the primary public-facing artefact.
+Myrrhin is a non-profit maritime industry initiative — not primarily an education platform. It provides networking events, industry newsletters, research reports, and career opportunities for both maritime professionals and students. The goal is to bridge the gap between seasoned industry experts and the next generation of maritime talent. The landing page is the primary public-facing artefact.
 
 ## Founders
 
-- **Argyris Dimopoulos** — Founder. Commercial shipping operations and industry training.
-- **Niko Gkoutziamanis** — Co-Founder. Maritime business and commercial strategy.
+- **Argyris Dimopoulos** — Founder. Maritime professional with a background in international shipping and finance. Focuses on shipping markets, maritime strategy, and sustainable value creation.
+- **Niko Gkoutziamanis** — Co-Founder. Background in Economics, Finance, and Computer Science. Former investment banking professional in the United States. Deep interest in the maritime industry.
 
 ## Tech Stack
 

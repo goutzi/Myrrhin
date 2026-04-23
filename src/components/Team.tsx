@@ -5,13 +5,13 @@ const founders = [
     role: 'Founder',
     name: 'Argyris Dimopoulos',
     photo: '/img/Dimopoulos_Portrait.jpg',
-    bio: 'A career maritime professional with deep roots in commercial shipping operations and industry training. Argyris founded Myrrhin to translate years of operational knowledge into structured, accessible education for the next generation of maritime professionals.',
+    bio: 'A maritime professional with a solid academic and business background in international shipping and finance, he founded Myrrhin to facilitate global connectivity within the shipping industry, aiming to provide networking opportunities for both emerging maritime professionals and seasoned experts in the sector. His work emphasizes shipping markets, maritime strategy, and the sustainable value creation throughout the global shipping landscape.',
   },
   {
     role: 'Co-Founder',
     name: 'Niko Gkoutziamanis',
     photo: '/img/Gkoutziamanis_Portrait.jpg',
-    bio: 'With a background spanning maritime business and commercial strategy, Niko co-founded Myrrhin to help build the infrastructure, partnerships, and vision needed to bring world-class shipping education to professionals everywhere.',
+    bio: "Niko grew up in Greece before pursuing his education across the Netherlands and the United States, where he studied Economics, Finance, and Computer Science before building a career in investment banking. Working at the intersection of capital markets and commercial strategy, he developed a sharp understanding of how industries grow and where the gaps are. That experience, combined with a deep passion for the maritime world, is what he brings to Myrrhin.",
   },
 ]
 
@@ -32,7 +32,7 @@ export default function Team() {
         </div>
         <p className="max-w-[320px] text-[15px] text-[#6a7a9a] leading-[1.65]">
           Bringing together deep maritime expertise and strategic vision to
-          build an education initiative the industry genuinely needs.
+          build the professional community the industry has always needed.
         </p>
       </div>
 

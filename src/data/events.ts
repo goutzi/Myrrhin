@@ -12,10 +12,10 @@ export interface MyrEvent {
 export const events: MyrEvent[] = [
   {
     id: 'intro-maritime-apr-2026',
-    title: 'Careers in Maritime Shipping | An Introduction',
-    date: '2026-04-24',
-    time: '10:00 – 12:00 EEST',
-    location: 'TBD',
+    title: 'Sea your Future | An introduction to careers in Maritime Shipping',
+    date: '2026-04-25',
+    time: '18:00 EEST',
+    location: 'REX Auditorium, Chora Messinia',
     format: 'in-person',
     description:
       'An introductory session exploring career paths in the maritime shipping industry — from commercial operations and chartering to port logistics and ship management.',

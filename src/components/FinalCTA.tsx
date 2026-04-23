@@ -14,14 +14,14 @@ export default function FinalCTA() {
           <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-orange/85 mb-5">
             Don&apos;t miss the launch
           </p>
-          <h2 className="font-serif font-light text-white leading-[1.15] mb-5 text-[clamp(2.2rem,4vw,3.4rem)]">
-            The future of maritime education{' '}
-            <em className="text-orange not-italic">starts here.</em>
+          <h2 className="font-serif font-light text-white leading-[1.15] mb-5 text-[clamp(1.8rem,3vw,2.6rem)]">
+            Something is happening{' '}
+            <em className="text-orange not-italic">in maritime.</em>
           </h2>
           <p className="text-[17px] text-white/60 leading-[1.7]">
-            We&apos;re building something that the industry hasn&apos;t seen before. Be
-            part of it from day one — leave your email and we&apos;ll be in touch
-            when we&apos;re ready to share more.
+            Events, insights, and a growing network of people who care about
+            where this industry is headed. Get in early — leave your email and
+            we&apos;ll keep you in the loop.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export default function FinalCTA() {
             Join the waitlist
           </h3>
           <p className="text-sm text-white/50 mb-6 leading-[1.6]">
-            Early subscribers get priority access to our programmes and updates.
+            Join early and stay ahead — we&apos;ll send you what&apos;s worth reading, nothing more.
           </p>
           <EmailSignupForm variant="dark" buttonLabel="Sign Me Up" />
         </div>

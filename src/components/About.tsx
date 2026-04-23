@@ -14,15 +14,18 @@ export default function About() {
             Built by people who know the industry from the inside out.
           </h2>
           <p className="text-base text-[#4a5a7a] leading-[1.8] mb-[18px]">
-            Myrrhin exists because the maritime world deserves education that
-            matches the complexity and global scale of modern shipping. We&apos;re
-            building programmes grounded in real operational experience — not
-            textbook theory.
+            Myrrhin exists because the people who keep global trade moving
+            deserve better than scattered resources and closed networks — and
+            because the next generation of maritime talent deserves a clear path
+            into the industry. Too much valuable knowledge never reaches the
+            people who need them most. We believe a more connected maritime
+            community is a stronger one.
           </p>
           <p className="text-base text-[#4a5a7a] leading-[1.8] mb-[18px]">
-            From commercial shipping operations to port logistics, our
-            curriculum will be designed with one question in mind: what do
-            professionals actually need to succeed at sea and ashore?
+            From high-impact industry events to newsletters and industry
+            research reports, we bring that vision to life. With opportunities
+            that matter to professionals and students alike, everything we do is
+            designed to create real value, not noise.
           </p>
           <p className="text-base text-[#4a5a7a] leading-[1.8]">
             We&apos;re at the start of that journey. Join us early.

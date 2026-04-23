@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Myrrhin — Maritime Shipping Education',
   description:
     'Myrrhin is a maritime shipping education initiative bringing industry-grade knowledge to professionals and students across the globe.',
+  icons: {
+    icon: '/img/Myrrhin_Favicon.svg',
+  },
 }
 
 export default function RootLayout({
